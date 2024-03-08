@@ -44,7 +44,7 @@ const Problema3 = A.dif(B.inter(C))
 const Problema4 = B.dif(C)
 const Problema5 = B.inter(U.dif(A))
 const Problema6 = U.dif((A.inter(C)))
-const Problema7 = U.dif(A).inter(U.dif(C))
+const Problema7 = U.dif(A).union(U.dif(C))
 
 //Ejemplos de diferencia simetrica
 
