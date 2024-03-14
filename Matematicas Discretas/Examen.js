@@ -2,7 +2,7 @@ import { OperacionesBases } from "./operacionesBases.js"
 import { Conjunto } from "./TeoriaDeConjuntos.js"
 
 
-const {conversionDecABase, conversionADec, conversionBasefraccionADecimal, sumaBases, multiplicacionBases} = OperacionesBases()
+const {conversionDecABase, conversionADec, sumaBases, multiplicacionBases} = OperacionesBases()
 
 
 
@@ -68,7 +68,6 @@ console.log(`5.- \na) (B ∩ C)' U D` + " = " + "{" + cinco_a + "}")
 console.log(`b) (B Δ D) ∩ C ` + " = " + "{" + cinco_b + "}") 
 console.log(`c) (A - D) U (A ∩ B)` + " = " + "{" + cinco_c + "}") 
 console.log(`d) (A Δ C)'` + " = " + "{" + cinco_d + "}") 
-
 
 
 
