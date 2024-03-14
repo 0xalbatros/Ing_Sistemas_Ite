@@ -1,4 +1,5 @@
 import { OperacionesBases } from "./operacionesBases.js"
+import { Conjunto } from "./TeoriaDeConjuntos.js"
 
 
 const {conversionDecABase, conversionADec, conversionBasefraccionADecimal, sumaBases, multiplicacionBases} = OperacionesBases()
@@ -51,6 +52,23 @@ console.log("4.-")
 console.log({decimal})
 console.log({baseSiete})
 console.log({baseNueve})
+
+const U = new Conjunto("a","e","i","o","u",0,1,2,3,4,5,6,7,8,9)
+const A = new Conjunto("a","e","i",6,8,9)
+const B = new Conjunto("a","i","o",1,2,3)
+const C = new Conjunto("a","e","u",0,6,7)
+const D = new Conjunto("a","i",3,5,6,7)
+
+const cinco_a = U.dif(B.inter(C)).union(D)
+const cinco_b = B.difSim(D).inter(C)
+const cinco_c = A.dif(D).union(A.inter(B))
+const cinco_d = U.dif(A.difSim(C))
+
+console.log(`5.- \na) (B ∩ C)' U D` + " = " + "{" + cinco_a + "}") 
+console.log(`b) (B Δ D) ∩ C ` + " = " + "{" + cinco_b + "}") 
+console.log(`c) (A - D) U (A ∩ B)` + " = " + "{" + cinco_c + "}") 
+console.log(`d) (A Δ C)'` + " = " + "{" + cinco_d + "}") 
+
 
 
 
