@@ -11,25 +11,24 @@ class Grafica {
         this.height = canvas.height
         this.posX = 1
         this.posY = 1
-        this.color = "rgb(0,0,0)"
-        this.unidad = 50
+        this.escala = 50
     }
 
     planoCartesiano() {
-        let lineas = canvas.width / this.unidad
+        let lineas = canvas.width / this.escala
         for (let i = 1; i < lineas + 1; ++i) {
             canvasContext.lineWidth = 1
             canvasContext.strokeStyle = "gray"
-            canvasContext.moveTo(this.posX * i * this.unidad, this.posY)
+            canvasContext.moveTo(this.posX * i * this.escala, this.posY)
             canvasContext.lineTo(
-                this.posX * i * this.unidad,
+                this.posX * i * this.escala,
                 this.posY + this.height
             )
             canvasContext.stroke()
-            canvasContext.moveTo(this.posX, this.posY * i * this.unidad)
+            canvasContext.moveTo(this.posX, this.posY * i * this.escala)
             canvasContext.lineTo(
                 this.posX + this.width,
-                this.posY * i * this.unidad
+                this.posY * i * this.escala
             )
             canvasContext.stroke()
         }
@@ -51,7 +50,7 @@ class Grafica {
 
         canvasContext.beginPath()
         for (let i = 0; i < lineas; ++i) {
-            if (this.unidad <= 30) {
+            if (this.escala <= 30) {
                 if (i % 2 == 0) {
                     if (lineas / 2 - i == 0) {
                         continue
@@ -60,12 +59,12 @@ class Grafica {
                         canvasContext.fillText(
                             `${lineas / 2 - i}`,
                             (this.posX * this.width) / 2 + 5,
-                            this.posY + i * this.unidad + 5
+                            this.posY + i * this.escala + 5
                         )
                         canvasContext.font = "10px serif"
                         canvasContext.fillText(
                             `${-lineas / 2 + i}`,
-                            this.posX + i * this.unidad + 5,
+                            this.posX + i * this.escala + 5,
                             (this.posY * this.width) / 2 + 5
                         )
                     }
@@ -78,12 +77,12 @@ class Grafica {
                     canvasContext.fillText(
                         `${lineas / 2 - i}`,
                         (this.posX * this.width) / 2 + 5,
-                        this.posY + i * this.unidad - 5
+                        this.posY + i * this.escala - 5
                     )
                     canvasContext.font = "20px serif"
                     canvasContext.fillText(
                         `${-lineas / 2 + i}`,
-                        this.posX + i * this.unidad + 5,
+                        this.posX + i * this.escala + 5,
                         (this.posY * this.width) / 2 - 5
                     )
                 }
@@ -98,8 +97,8 @@ class Grafica {
         let offsetX = this.width / 2
         let offsetY = this.height / 2
         for (let i = -puntos; i <= puntos; i += 0.01) {
-            let y = eval(func.replace(/x/g, "i")) * this.unidad
-            let x = i * this.unidad
+            let y = eval(func.replace(/x/g, "i")) * this.escala
+            let x = i * this.escala
             if (isNaN(y) || y === Infinity) {
                 continue
             } else {
