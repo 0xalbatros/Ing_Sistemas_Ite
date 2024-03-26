@@ -65,5 +65,5 @@ let start = () => {
     setInterval(update, 1000/fps)
 };
 spin()
-//start()
+start()
 
