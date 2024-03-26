@@ -16,6 +16,3 @@ def areaHexagono (lado, apotema):
 areaHexagono(1, 0)
 areaHexagono(5, "5")
 areaHexagono(15, 8)
-
-
-
